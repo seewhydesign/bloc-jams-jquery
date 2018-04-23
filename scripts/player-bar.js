@@ -4,6 +4,19 @@
     $(this).attr('playState', player.playState);
   });
 
+// enable previous track button
+  $('button#previous').on('click', function() {
+    if (player.playState !== 'playing') { return; }
+
+    const currentSongIndex = album.songs.indexOf(player.currentlyPlaying);
+    const previousSongIndex = currentSongIndex - 1;
+    if (currentSongIndex === 0) { return; }
+
+    const previousSong = album.songs[previousSongIndex];
+    player.playPause(previousSong);
+  });
+
+// enable next track button
   $('button#next').on('click', function() {
     if (player.playState !== 'playing') { return; }
 
