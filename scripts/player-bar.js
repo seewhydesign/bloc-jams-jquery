@@ -49,12 +49,4 @@
     $('#time-control input').val(percent);
   }, 1000);
 
-
-// event handler for volume
-  setVolume( () => {
-    if (player.playState !== 'playing') { return; }
-    $('#volume-control input').val(value);
-  });
-
-
 }
